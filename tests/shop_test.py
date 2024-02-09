@@ -10,6 +10,8 @@ class TestShop(BaseTest):
 
         self.shop_page.filter_by_price()
         
+        self.shop_page.highlight_slider()
+        
         self.shop_page.highlight_product_prices()
 
         price_elements = self.shop_page.get_product_prices()

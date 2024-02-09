@@ -31,7 +31,7 @@ class ShopPage:
         price_elements = self.driver.find_elements(*self.product_prices)
 
         for price_element in price_elements:
-            self.scroll_to_element(price_element)
+            # self.scroll_to_element(price_element)
             self.driver.execute_script("arguments[0].style.border='3px solid red'", price_element)
     
     def scroll_to_element(self, element):
@@ -51,3 +51,7 @@ class ShopPage:
         slider = self.driver.find_element(*self.slider)
         actions = ActionChains(self.driver)
         actions.drag_and_drop_by_offset(slider, -200, 0).perform()
+
+    def highlight_slider(self):
+        slider_wrapper_element = self.driver.find_element(By.CLASS_NAME, "price_slider_wrapper")
+        self.driver.execute_script("arguments[0].style.border='3px solid red'", slider_wrapper_element)
