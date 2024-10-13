@@ -1,3 +1,4 @@
 tests/__pycache__/
 pages/__pycache__/
 screenshots
+.vscode/settings.json
